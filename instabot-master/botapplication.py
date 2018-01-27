@@ -22,7 +22,3 @@ bot.follow(ids)
 
 # bot.save_user_stats(args.w)
 
-
-
-# botapplication.py -u ilya_lix86 -p sled17414457 -w kudago
-
