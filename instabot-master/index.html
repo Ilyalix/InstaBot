@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InstaBot</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin" rel="stylesheet" 
+	type="text/css"></link>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light&subset=cyrillic,latin" rel="stylesheet" type="text/css"></link>
+
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+
+	<H1 id="H">Hi! You are welcome to InstaBot! </H1>
+
+	
+	<h3 class="Log" id="L">Login</h3>
+	<input class="login" type="login" name="login">
+
+	<h3 class="Pass" id="L">Password</h3>
+	<input class="password" type="password" name="password">
+	
+	<h3 class="IDH" id="L">Подписаться по имени</h3>
+	<input class="id" type="id" name="id">
+
+	<button onclick="Add()" class=button1 title="Введите данные">Добавить</button>
+	
+
+	<h3 class="IDs" id="L">Найти подписчиков</h3>
+	<input class="ids" type="id" name="ids">
+
+	<button onclick="Search()" class=button2 title="Введите данные">Найти</button>
+
+	<div class="Hello"></div>
+
+<script type="text/javascript">
+
+function Add() {
+
+var Log = document.getElementsByClassName("login")[0].value;
+var Pass = document.getElementsByClassName("password")[0].value;
+var id = document.getElementsByClassName("id")[0].value;
+
+document.getElementsByClassName("Log")[0].style='#L';
+document.getElementsByClassName("Pass")[0].style='#L';
+document.getElementsByClassName("IDH")[0].style='#L';
+
+if (Log == "") {
+// alert ("заполните Log");
+document.getElementsByClassName("Log")[0].style.color='red';
+}
+if (Pass == "") {
+// alert ("заполните Pass");
+document.getElementsByClassName("Pass")[0].style.color='red';
+}
+if (id == "") {
+// alert ("заполните id");
+document.getElementsByClassName("IDH")[0].style.color='red';
+}
+
+if (Log==''||Pass==''||id==''){
+return;
+}
+
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+				
+	if (this.readyState == 4 && this.status == 200) {
+	document.getElementsByClassName("Hello")[0].innerHTML = this.responseText;
+		}
+	}
+
+xmlhttp.open("GET","add.php?log="+Log+"&pass="+Pass+"&ID="+id);
+xmlhttp.send();
+
+document.getElementsByClassName("login")[0].value="";
+document.getElementsByClassName("password")[0].value="";
+document.getElementsByClassName("id")[0].value="";
+
+}
+
+
+
+function Search() {
+
+var Log2 = document.getElementsByClassName("login")[0].value;
+var Pass2 = document.getElementsByClassName("password")[0].value;
+var ids = document.getElementsByClassName("ids")[0].value;
+
+document.getElementsByClassName("Log")[0].style='#L';
+document.getElementsByClassName("Pass")[0].style='#L';
+document.getElementsByClassName("IDs")[0].style='#L';
+
+if (Log2 == "") {
+// alert ("заполните Log2");
+document.getElementsByClassName("Log")[0].style.color='red';
+}
+if (Pass2 == "") {
+// alert ("заполните Pass2");
+document.getElementsByClassName("Pass")[0].style.color='red';
+}
+if (ids == "") {
+// alert ("заполните ids");
+document.getElementsByClassName("IDs")[0].style.color='red';
+}
+
+if (Log2==''||Pass2==''||ids==''){
+return;
+}
+
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+				
+	if (this.readyState == 4 && this.status == 200) {
+	document.getElementsByClassName("Hello")[0].innerHTML = this.responseText;
+		}
+	}
+
+xmlhttp.open("GET","Search.php?log="+Log2+"&pass="+Pass2+"&ID="+ids);
+xmlhttp.send();
+
+document.getElementsByClassName("login")[0].value="";
+document.getElementsByClassName("password")[0].value="";
+document.getElementsByClassName("ids")[0].value="";
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>
