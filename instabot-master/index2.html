@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>InstaBot</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=cyrillic,latin" rel="stylesheet" 
+	type="text/css"></link>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:light&subset=cyrillic,latin" rel="stylesheet" type="text/css"></link>
+
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+		
+	<h3 class="IDs" id="L">Найти</h3>
+	<input class="ids" type="id" name="ids">
+
+	<button onclick="Search()" class=button2 title="Введите данные">Найти</button>
+
+	<div class="Hello"></div>
+
+<script type="text/javascript">
+
+
+function Search() {
+
+xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+				
+	if (this.readyState == 4 && this.status == 200) {
+	document.getElementsByClassName("Hello")[0].innerHTML = this.responseText;
+		}
+	}
+
+xmlhttp.open("GET","weather.php");
+xmlhttp.send();
+
+document.getElementsByClassName("ids")[0].value="";
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>

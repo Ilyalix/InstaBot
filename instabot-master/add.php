@@ -4,21 +4,6 @@
 <style>
 
 
-table {
-    width: 100%;
-    
-}
-
-table, td, th {
-    border: 1px solid black;
- 
-}
-
-th {text-align: left;}
-
-
-
-
 </style>
 </head>
 <body>
@@ -30,15 +15,16 @@ $log = $_GET["log"];
 $pass = $_GET["pass"];
 $ID = $_GET["ID"];
 
-$r = passthru('C:\apache\localhost\www\InstaBot\Bot\botapplication.py' -u '.$log.' -p '.$pass.' -w '.$ID.');
+echo shell_exec('python3 /var/www/html/instaBot-master/instabot-master/botapplication.py -u '.$log.' -p '.$pass.' -w '.$ID.' 2>&1');
 
+// shell_exec('python /var/www/html/instaBot-master/instabot-master/botapplication.py -u '.$log.' -p '.$pass.' -w '.$ID.'');
 
-// $r = exec('mkdir C:\Document\test');
+// echo shell_exec("python /var/www/html/instaBot-master/instabot-master/mkdir.py 2>&1");
 
 
 // $cmd = 'C:\apache\localhost\www\InstaBot\Bot\botapplication.py -u '.$log.' -p '.$pass.' -w '.$ID.'';
 
-echo "string";
+//echo "string";
 
 // echo $r;
 

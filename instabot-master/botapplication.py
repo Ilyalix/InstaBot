@@ -1,6 +1,8 @@
 import sys
 import os
 import argparse
+import instabot
+
 
 sys.path.append(os.path.join(sys.path[0], '../'))
 
@@ -12,13 +14,22 @@ parser.add_argument('-p', type=str, help="password")
 parser.add_argument('-w', type=str, help="worker")
 args = parser.parse_args()
 
+#print(args.u)
+#print("----------------------")
+
 bot = Bot()
+
 bot.login(username=args.u, password=args.p)
 ids = bot.get_userid_from_username(args.w)
 
-# print(ids)
+print(ids)
 
 bot.follow(ids)
 
+<<<<<<< HEAD
+
+# botapplication.py -u ilya_lix86 -p sled17414457 -w kudago
+=======
 # bot.save_user_stats(args.w)
+>>>>>>> 38a2dac498472a3feb3db7d0df7410d3db01012f
 
