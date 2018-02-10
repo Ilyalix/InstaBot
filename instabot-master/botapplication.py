@@ -26,6 +26,10 @@ print(ids)
 
 bot.follow(ids)
 
+<<<<<<< HEAD
 
 # botapplication.py -u ilya_lix86 -p sled17414457 -w kudago
+=======
+# bot.save_user_stats(args.w)
+>>>>>>> 38a2dac498472a3feb3db7d0df7410d3db01012f
 
