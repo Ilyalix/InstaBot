@@ -1,4 +1,5 @@
 # InstaBot-master
-InstaBot
+InstaBot (html, css, js, python, PHP)
 
 работает на Linux
+
