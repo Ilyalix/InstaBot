@@ -24,7 +24,8 @@ ids = bot.get_userid_from_username(args.w)
 
 print(ids)
 
-bot.follow(ids)
+bot.follow_followers(ids)
+
 
 
 # botapplication.py -u ilya_lix86 -p sled17414457 -w kudago

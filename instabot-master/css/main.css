@@ -17,8 +17,8 @@ body {
 
 .button1 {
     position: absolute;
-    left: 12%;
-    top: 45.6%;
+    left: 180px;
+    top: 365px
     background: #99b6df;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#99b6df), to(#638ec8));
     background: -moz-linear-gradient(#99b6df, #638ec8);
@@ -49,8 +49,8 @@ body {
 
 .button2 {
     position: absolute;
-    left: 12%;
-    top: 59%;
+    left: 180px;
+    top: 390px;
     width: 80px;
     background: #99b6df;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#99b6df), to(#638ec8));
@@ -78,7 +78,6 @@ body {
     background: linear-gradient(#638ec8, #99b6df);
     border: solid 4px #6d94ce;
     box-shadow: inset 0 10px 15px 0 #4176c4; }
-
 
 
 input {
